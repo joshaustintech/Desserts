@@ -1,5 +1,7 @@
 # Desserts
-
+[![Xcode - Build and Analyze](https://github.com/joshaustintech/Desserts/actions/workflows/objective-c-xcode.yml/badge.svg)](https://github.com/joshaustintech/Desserts/actions/workflows/objective-c-xcode.yml)
 
 Simple dessert recipe viewer app for iOS 17 and above.
-![iPhone 15 Pro screenshot](simulator-screenshot-01.png)
+
+
+<img src="simulator-screenshot-01.png" width=512 />
