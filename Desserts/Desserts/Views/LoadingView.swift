@@ -3,6 +3,7 @@ import SwiftUI
 struct LoadingView: View {
     
     @State private var isAnimating = false
+    var labelText: String
     
     var body: some View {
         VStack(spacing: 24) {
@@ -20,12 +21,12 @@ struct LoadingView: View {
                             }
                     }
             }
-            Text("Fetching desserts...")
+            Text(labelText)
                 .bold()
         }
     }
 }
 
 #Preview {
-    LoadingView()
+    LoadingView(labelText: "Fetching desserts...")
 }

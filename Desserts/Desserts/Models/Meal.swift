@@ -1,5 +1,6 @@
-struct Meal: Codable {
+struct Meal: Codable, Hashable, Identifiable {
+    var id: Int { Int(idMeal)! }
+    var idMeal: String
     var strMeal: String
     var strMealThumb: String
-    var idMeal: String
 }
