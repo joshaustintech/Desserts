@@ -1,15 +1,17 @@
-//
-//  ErrorView.swift
-//  Desserts
-//
-//  Created by Joshua Austin on 3/12/24.
-//
-
 import SwiftUI
 
 struct ErrorView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 12) {
+            Text("Unable to load.")
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            Image(systemName: "circle.slash")
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                .foregroundStyle(.red)
+            Text("Please check your Internet connection before trying again.")
+                .font(.footnote)
+                .foregroundStyle(.placeholder)
+        }
     }
 }
 

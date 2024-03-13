@@ -11,7 +11,7 @@ struct DessertNavigation: View {
                     NavigationLink {
                         DessertDetails(meal: meal)
                     } label: {
-                        Text(meal.strMeal)
+                        DessertRow(meal: meal)
                     }
                 }
                 .navigationTitle("Desserts")

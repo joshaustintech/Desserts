@@ -13,7 +13,7 @@ struct ContentView: View {
                 }
         } else {
             if (isInvalid || meals == nil) {
-                Text("Awww, shucks")
+                ErrorView()
             } else {
                 DessertNavigation(meals: meals!)
             }
