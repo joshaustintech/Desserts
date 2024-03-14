@@ -9,7 +9,7 @@ struct DessertNavigation: View {
             NavigationSplitView {
                 List(meals.meals) { meal in
                     NavigationLink {
-                        DessertDetails(meal: meal)
+                        DessertDetails(mealId: meal.idMeal)
                     } label: {
                         DessertRow(meal: meal)
                     }
