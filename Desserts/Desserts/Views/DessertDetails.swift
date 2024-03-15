@@ -3,11 +3,18 @@ import SwiftUI
 struct DessertDetails: View {
     var mealId: String
     
-    @State private var meal: Meal? // TODO: replace with `Meals`
+    @State private var meal: Meal?
+    @State private var isLoading = true
     
     var body: some View {
-        if (meal == nil) {
+        if isLoading {
             LoadingView(labelText: "Loading details...")
+                .onAppear {
+                    self.meal = fetchDessertById(mealId)
+                    isLoading = false
+                }
+        } else if meal == nil {
+            ErrorView()
         } else {
             VStack(spacing: 12) {
                 AsyncImage(url: URL(string: meal!.strMealThumb)) { image in
@@ -62,36 +69,6 @@ struct DessertDetails: View {
                 Spacer()
             }.padding()
         }
-    }
-    
-    func fetchData(mealId: String) {
-        /*
-        guard let url = URL(string: "https://themealdb.com/api/json/v1/1/lookup.php?i=" + mealId) else {
-            print("probably invalid url")
-            isLoading = false
-            isInvalid = true
-            return
-        }
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data else {
-                isLoading = false
-                isInvalid = true
-                print("not even sure what this does")
-                return
-            }
-            do {
-                let meals = try JSONDecoder().decode(Meals.self, from: data)
-                DispatchQueue.main.async {
-                    self.meals = meals
-                    isLoading = false
-                }
-            } catch {
-                isLoading = false
-                isInvalid = true
-                print(error.localizedDescription)
-            }
-        }.resume()
-         */
     }
 }
 
