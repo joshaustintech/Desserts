@@ -21,9 +21,6 @@ struct DessertDetails: View {
                         image
                             .resizable()
                             .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                            .overlay {
-                                Circle().stroke(Color.accentColor, lineWidth: 4)
-                            }
                             .shadow(radius: 7)
                             .frame(width: 256, height: 256)
                     } placeholder: {
